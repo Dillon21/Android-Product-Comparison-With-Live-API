@@ -61,6 +61,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
     public String productName;
     public static final String Shared_prefs = "sharedPrefs";
     public static final String TEXT = "text";
+    public static final String LINK= "link";
     private String barcode;
 
     //Barcode variables
@@ -283,6 +284,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(Shared_prefs, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        editor.putString(LINK,link);
         editor.putString(TEXT, barcodeResult.getText().toString());
         editor.apply();
         Toast.makeText(this,"data saved", Toast.LENGTH_SHORT).show();
@@ -294,6 +296,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(Shared_prefs,MODE_PRIVATE);
         barcode = sharedPreferences.getString(TEXT,"");
+        link = sharedPreferences.getString(LINK,"");
 
     }
 
@@ -301,7 +304,8 @@ public class AddEditNoteActivity extends AppCompatActivity {
      * sets barcode view to barcode number
      */
     public void updateViews(){
-        barcodeResult.setText("barcode" + barcode);
+        barcodeResult.setText("barcode: " + barcode);
+
 
     }
 
