@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Find Cheapest</string>
+
+    <!--Scan Activity-->
+    <string name="scan">scan</string>
+    <string name="visit">Go to website</string>
+    <string name="insert">Insert</string>
+    <string name="name">Product Name</string>
+    <string name="price">Product price</string>
+
+</resources>
